@@ -1,0 +1,39 @@
+{
+  "name": "conventional-changelog-conventionalcommits-asciidoc",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "conventional-changelog conventionalcommits.org asciidoc preset",
+  "exports": "./index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AITHO/conventional-changelog-conventionalcommits-asciidoc.git"
+  },
+  "keywords": [
+    "conventional-changelog",
+    "conventionalcommits.org",
+    "asciidoc",
+    "preset"
+  ],
+  "files": [
+    "utils.js",
+    "conventionalChangelog.js",
+    "conventionalRecommendedBump.js",
+    "index.js",
+    "parserOpts.js",
+    "writerOpts.js",
+    "templates",
+    "constants.js"
+  ],
+  "author": "Aitho",
+  "engines": {
+    "node": ">=16"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AITHO/conventional-changelog-conventionalcommits-asciidoc/issues"
+  },
+  "homepage": "https://github.com/AITHO/conventional-changelog-conventionalcommits-asciidoc#readme",
+  "dependencies": {
+    "compare-func": "^2.0.0"
+  }
+}
