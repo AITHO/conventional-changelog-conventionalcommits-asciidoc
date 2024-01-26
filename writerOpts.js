@@ -3,7 +3,7 @@ import { resolve } from 'path'
 import { fileURLToPath } from 'url'
 import compareFunc from 'compare-func'
 import { DEFAULT_COMMIT_TYPES } from './constants.js'
-import { addBangNotes } from './utils.js'
+import { addBangNotes, replaceShortCodes } from './utils.js'
 
 const dirname = fileURLToPath(new URL('.', import.meta.url))
 const releaseAsRegex = /release-as:\s*\w*@?([0-9]+\.[0-9]+\.[0-9a-z]+(-[0-9a-z.]+)?)\s*/i
@@ -144,6 +144,8 @@ function getWriterOpts (config) {
           return `[@${user}](${usernameUrl})`
         })
       }
+
+      subject = replaceShortCodes(subject);
 
       // remove references that already appear in the subject
       const references = commit.references.filter(reference => !issues.includes(reference.prefix + reference.issue))
