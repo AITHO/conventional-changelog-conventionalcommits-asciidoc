@@ -143,9 +143,11 @@ function getWriterOpts (config) {
 
           return `[@${user}](${usernameUrl})`
         })
+
+        // Add emoji parsing
+        subject = replaceShortCodes(subject);
       }
 
-      subject = replaceShortCodes(subject);
 
       // remove references that already appear in the subject
       const references = commit.references.filter(reference => !issues.includes(reference.prefix + reference.issue))
